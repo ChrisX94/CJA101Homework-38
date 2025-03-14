@@ -1,0 +1,15 @@
+# #開頭是註解
+# *是萬用字元
+# 也可以標示資料夾
+
+.settings/
+bin/
+.classpath
+.project
+
+# IntelliJ 的設定檔
+*.idea
+*.iml
+
+# Mac的設定檔
+.DS_ Store
