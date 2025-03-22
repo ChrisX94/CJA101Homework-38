@@ -90,6 +90,7 @@ public class HW3_3 {
 		while (index < 6) {
 			randNum = getRandomNumber(49);
 			check = Arrays.copyOf(RandNumList, 6);
+			Arrays.sort(check);
 			if (Arrays.binarySearch(check, randNum) < 0 && Arrays.binarySearch(array, randNum) > 0) {
 				RandNumList[index] = randNum;
 				index++;
