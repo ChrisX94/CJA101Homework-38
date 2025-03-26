@@ -6,12 +6,12 @@ import java.util.Scanner;
 public class HW3_2 {
 
 	public static void main(String[] args) {
-		basic(9);
+		basic(10);
 		advance(100);
 	}
 
 	public static int getRandomNumber(int maxNum) {
-		return (int) (Math.random() * maxNum + 1);
+		return (int) (Math.random() * (maxNum + 1));
 	}
 
 	public static void basic(int maxNumber) {
@@ -23,13 +23,13 @@ public class HW3_2 {
 		while (true) {
 			System.out.print("Guess a Number From 0 to " + maxNumber + " : ");
 			ans = sc.nextInt();
-			if ((ans < maxNumber || ans >= 0) && ans == randomNumber) {
+			if ((ans <= maxNumber && ans >= 0) && ans == randomNumber) {
 				System.out.println("Correct!! the answer is: " + randomNumber + " (" + count + " attemps)");
 				break;
 			} else if (ans > maxNumber || ans < 0) {
 				System.out.println("The Number " + ans + " is out of range, please re-enter again:");
 			} else {
-				System.out.print("Incorrect, please try again: ");
+				System.out.print("Incorrect, please try again: \n");
 				count++;
 			}
 		}

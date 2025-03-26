@@ -11,16 +11,16 @@ public class HW3_3 {
 		System.out.print("Hi 阿文 which number you would like to remove(only 1 to 9):");
 		int removedNumber = sc.nextInt();
 
-		System.out.println("With int type:");
-		int[] intFilteredLottryList = getFilteredLottryList(removedNumber);
-		printArray(intFilteredLottryList);
-		System.out.println("Available total numbers: " + intFilteredLottryList.length);
-		int[] sixNumbers = intRandomList(intFilteredLottryList);
-		System.out.print("Random Available list: ");
-		printArray(sixNumbers);
-
-		System.out.println("=====================================");
-		
+//		System.out.println("With int type:");
+//		int[] intFilteredLottryList = getFilteredLottryList(removedNumber);
+//		printArray(intFilteredLottryList);
+//		System.out.println("Available total numbers: " + intFilteredLottryList.length);
+//		int[] sixNumbers = intRandomList(intFilteredLottryList);
+//		System.out.print("Random Available list: ");
+//		printArray(sixNumbers);
+//
+//		System.out.println("=====================================");
+//		
 		String[] strFilteredLottryList = filteredLottryListString(removedNumber);
 		System.out.println("With String type:");
 		printArray(strFilteredLottryList);
@@ -111,6 +111,7 @@ public class HW3_3 {
 		while (index < 6) {
 			randNum = getRandomNumber((array.length)-1);
 			check = Arrays.copyOf(numberIndex, 6);
+			Arrays.sort(check);
 			if (Arrays.binarySearch(check, randNum) < 0) {
 				RandNumList[index] = array[randNum];
 				index++;

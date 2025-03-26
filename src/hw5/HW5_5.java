@@ -13,13 +13,13 @@ genAuthCode()，當呼叫此方法時，會回傳一個8位數的驗證碼，此
 public class HW5_5 {
 
 	public static void main(String[] args) {
-//		Scanner sc = new Scanner(System.in);
-//		System.out.print("Enter the AuthCode Length: ");
-//		int AuthCodeLen = sc.nextInt();
-//		System.out.println(genAuthCode(AuthCodeLen));
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the AuthCode Length: ");
+		int AuthCodeLen = sc.nextInt();
+		System.out.println(genAuthCode(AuthCodeLen));
 		
 //		for(int i = 0 ; i < 100; i++)
-			System.out.println(genAuthCode(8));
+//			System.out.println(genAuthCode(8));
 
 	}
 	
