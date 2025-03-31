@@ -22,7 +22,7 @@ public class HW4_1 {
 		
 		double avg = avg(array);
 		System.out.println("陣列所有元素的平均值: " +avg);
-		System.out.println("元素大於平均值: " +avg);
+		System.out.print("元素大於平均值: \t");
 		for(int i = 0; i < array.length ; i++) {
 			if(array[i] > avg) {
 				System.out.print(array[i]+ "\t");

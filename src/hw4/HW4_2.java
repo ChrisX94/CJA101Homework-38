@@ -11,7 +11,7 @@ public class HW4_2 {
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Please Enter text: ");
-		String text = sc.next();
+		String text = sc.nextLine();
 		StringBuffer stringBuffer = new StringBuffer(text);
 		
 		System.out.println("\n" + stringBuffer.reverse());

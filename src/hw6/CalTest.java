@@ -32,6 +32,7 @@ public class CalTest {
 			y = sc.nextInt();
 			cal.setY(y);
 			cal.powerXY(x, y);
+			sc.close();
 
 		} catch (InputMismatchException e) {  // 出現InputMismatchException 印出輸入格式不正確再呼叫自己
 			System.out.println("輸入格式不正確");
@@ -40,6 +41,7 @@ public class CalTest {
 			System.out.println(e.getMessage()); // 出現CalException 印出輸錯誤內容再呼叫自己
 			setpowerXY(cal);
 		}
+		
 	}
 
 }
