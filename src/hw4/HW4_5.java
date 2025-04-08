@@ -20,7 +20,7 @@ public class HW4_5 {
 
 		int[] dateArr = getDateArr();
 		int dayOfYear = dayOfYear(dateArr);
-		String dateStr = dateArr[0] + "-" + dateArr[1] + "-" + dateArr[2];
+		String dateStr = dateArr[0] + "-" + (dateArr[1]+1) + "-" + dateArr[2];
 		System.out.println("輸入的日期: " + dateStr + " 為該年第 " + dayOfYear + " 天");
 	}
 
