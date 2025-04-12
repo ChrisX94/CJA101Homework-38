@@ -20,6 +20,8 @@ public class HW9_2 {
 
 class Account {
 	private int balance;
+	public static boolean finished = false;
+
 	public Account() {
 	};
 
@@ -31,7 +33,10 @@ class Account {
 		while (balance > 3000) {
 			System.out.println("媽媽看到餘額有3000以上，暫停匯款");
 			try {
-				wait();
+				wait(50);
+				if(finished) {
+					break;
+				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -49,7 +54,10 @@ class Account {
 		while (balance < amount) {
 			System.out.println("媽媽被雄大要求匯款");
 			try {
-				wait();
+				wait(50);
+				if(finished) {
+					break;
+				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -61,8 +69,10 @@ class Account {
 			System.out.println("雄大看到餘額在2000以下，要求匯款");
 		}
 	}
-	
 
+	synchronized public void breaker() {
+		this.finished = true;
+	}
 
 	public void setBalance(int balance) {
 		this.balance = balance;
@@ -79,38 +89,29 @@ class Deposit extends Thread {
 
 	public Deposit(Account account) {
 		this.account = account;
-		setPriority(10);
 	}
 
 	public void run() {
 		for (int i = 1; i <= 10; i++) {
 			account.deposit(2000);
-
 		}
+		account.breaker();
 	}
 }
 
 class Withdraw extends Thread {
 	Account account;
-	
+
 	public Withdraw(Account account) {
 		this.account = account;
-		setPriority(10);
 	}
 
 	public void run() {
 		for (int i = 1; i <= 10; i++) {
 			account.withdraw(1000);
-
 		}
+		account.breaker();
 	}
 
 }
-class Breaker extends Thread {
-	public Breaker() {
-		setPriority(1);
-	}
-	public void run() {
-		System.out.println("End");
-	}
-}
+
