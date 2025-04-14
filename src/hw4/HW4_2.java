@@ -9,13 +9,17 @@ public class HW4_2 {
 	
 	public static void main(String[] args) {
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Please Enter text: ");
-		String text = sc.nextLine();
-		StringBuffer stringBuffer = new StringBuffer(text);
+//		Scanner sc = new Scanner(System.in);
+//		System.out.print("Please Enter text: ");
+//		String text = sc.nextLine();
+//		StringBuffer stringBuffer = new StringBuffer(text);
+//		System.out.println("\n" + stringBuffer.reverse());
+//		
 		
-		System.out.println("\n" + stringBuffer.reverse());
-		
+		String text = "Hello World";
+		for(int i = text.length()-1; i >=0; i--) {
+			System.out.print(text.charAt(i));
+		}
 
 	}
 	
